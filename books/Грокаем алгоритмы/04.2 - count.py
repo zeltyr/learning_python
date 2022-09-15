@@ -1,10 +1,9 @@
 from array import array
 
-def count(sum_array: array):
-    if len(sum_array) == 0:
+def count(count_array: array):
+    if count_array == []:
         return 0
     else:
-       del sum_array[0]
-       return 1 + count(sum_array)
+       return 1 + count(count_array[1:])
 
 print(count([2, 2, 6, 8, 10, 0.0, 9]))

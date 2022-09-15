@@ -1,13 +1,10 @@
 from array import array
 
-def max_array(sum_array: array):
-    if len(sum_array) == 1:
-        return sum_array[0]
-    elif sum_array[0] > sum_array[1]:
-        del sum_array[1]
-        return max_array(sum_array)
+def max(max_array: array):
+    if len(max_array) == 2:
+        return max_array[1] if max_array[1] > max_array[0] else max_array[0]
     else:
-        del sum_array[0]
-        return max_array(sum_array)
+        sub_max = max(max_array[1:])
+        return sub_max if sub_max > max_array[0] else max_array[0]
 
-print(max_array([2, 21, 6, 8, 3, 0.0, 9]))
+print(max([2, 21, 63, 8, 3, 0.0, 9]))
